@@ -65,6 +65,16 @@ public class QueueWithOneStack <E>{
     }
 
     /**
+     * removes all elements of the queue
+     */
+    public void makeEmpty(){
+        //This method removes all elements of the queue
+        while(store.size() > 0) {
+            store.pop();
+        }
+    }
+
+    /**
      * return the number of elements in the queue
      */
     public int size() {

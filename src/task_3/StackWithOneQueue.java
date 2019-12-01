@@ -52,6 +52,16 @@ public class StackWithOneQueue<E> {
     }
 
     /**
+     * removes all elements of the stack
+     */
+    public void makeEmpty(){
+        //This method removes all elements of the queue
+        while(store.size() > 0) {
+            store.poll();
+        }
+    }
+
+    /**
      * Returns the number of elements in the stack
      */
     public int size() {
@@ -63,11 +73,7 @@ public class StackWithOneQueue<E> {
      * or false if it does
      */
     public boolean isEmpty() {
-        if (store.size() < 1) {
-            return true;
-        } else {
-            return false;
-        }
+        return store.size() < 1;
     }
 
     /**

@@ -21,6 +21,7 @@ public class Main_Test {
         System.out.println("\nTest Queue oneS: ");
         testQueueOneStack(myQueueO);
     }
+
     private static void fillDataStructures(){
         fillQueueT(myQueue);
         fillQueueO(myQueueO);
@@ -37,6 +38,11 @@ public class Main_Test {
         System.out.println("remove     "+queue.remove());
         System.out.println("size       "+queue.size());
         System.out.println("empty?     "+queue.isEmpty());
+        queue.makeEmpty();
+        System.out.println("After makeEmpty(): ");
+        System.out.println("empty?     "+queue.isEmpty());
+        System.out.println("Queue content "+queue.toString());
+
     }
     private static void testQueueOneStack(QueueWithOneStack<Integer> queue){
         System.out.println("size       "+queue.size());
@@ -45,6 +51,10 @@ public class Main_Test {
         System.out.println("remove     "+queue.remove());
         System.out.println("size       "+queue.size());
         System.out.println("empty?     "+queue.isEmpty());
+        queue.makeEmpty();
+        System.out.println("After makeEmpty(): ");
+        System.out.println("empty?     "+queue.isEmpty());
+        System.out.println("Queue content "+queue.toString());
     }
     private static void testStackTwoQueues(StackWithTwoQueues<Integer> stack){
         System.out.println("Stack content "+stack.toString());
@@ -56,6 +66,10 @@ public class Main_Test {
         System.out.println("remove     "+stack.remove());
         System.out.println("size       "+stack.size());
         System.out.println("empty?     "+stack.isEmpty());
+        stack.makeEmpty();
+        System.out.println("After makeEmpty(): ");
+        System.out.println("empty?     "+stack.isEmpty());
+        System.out.println("Queue content "+stack.toString());
     }
     private static void testStackOneQueue(StackWithOneQueue<Integer> stack){
         System.out.println("peek       "+stack.peek());
@@ -63,6 +77,9 @@ public class Main_Test {
         System.out.println("pop        "+stack.pop());
         System.out.println("remove     "+stack.remove());
         System.out.println("size       "+stack.size());
+        System.out.println("empty?     "+stack.isEmpty());
+        stack.makeEmpty();
+        System.out.println("After makeEmpty(): ");
         System.out.println("empty?     "+stack.isEmpty());
     }
     private static void fillQueueT(QueueWithTwoStacks<Integer> myQueue){

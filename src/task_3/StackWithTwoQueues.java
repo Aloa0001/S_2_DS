@@ -59,6 +59,15 @@ public class StackWithTwoQueues<E> {
         }
     }
     /**
+     * removes all elements of the stack
+     */
+    public void makeEmpty(){
+        //This method removes all elements of the queue
+        while(store.size() > 0) {
+            store.poll();
+        }
+    }
+    /**
      * Returns the number of elements in the stack
      */
     public int size() {

@@ -87,6 +87,16 @@ public class QueueWithTwoStacks<E> {
     }
 
     /**
+     * removes all elements of the queue
+     */
+    public void makeEmpty(){
+        //This method removes all elements of the queue
+        while(store.size() > 0) {
+            store.pop();
+        }
+    }
+
+    /**
      * return the number of elements in the queue
      */
     public int size() {
@@ -99,11 +109,7 @@ public class QueueWithTwoStacks<E> {
      * returns false if the queue is empty
      */
     public boolean isEmpty() {
-        if (store.size() < 1) {
-            return true;
-        } else {
-            return false;
-        }
+        return store.size() < 1;
     }
 
     /**

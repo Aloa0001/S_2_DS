@@ -36,7 +36,6 @@ public class CheckSymbolsForCPlusPlus {
             }
         }
     }
-
     private static void checkStacks(Stack<Character> active, Stack<Character> cancel, String valid) {
         while (active.size() == cancel.size() && !active.isEmpty()) {
             if (active.peek().equals('[') && cancel.peek().equals(']')) {

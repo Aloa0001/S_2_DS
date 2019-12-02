@@ -15,17 +15,17 @@ public class MyLinkedListT4<T> {
 
     /**
      * Node inner class
-     * @param <T>> generic type
+     * @param <E>> generic type
      */
-    class Node<T> {
-        T data; // the data stored
-        Node<T> next;// pointer to next
+    class Node<E> {
+        E data; // the data stored
+        Node<E> next;// pointer to next
 
         /**
          * pointer constructor
          * @param obj data to be added
          */
-        public Node(T obj) {
+        public Node(E obj) {
             data = obj;
             next = null;// <- is the new tail
         }
@@ -57,12 +57,11 @@ public class MyLinkedListT4<T> {
         Node<T> node = new Node<>(obj);
         if (head == null) {
             head = tail = node;
-            currentSize++;
         }else {
             tail.next = node;
             tail = node;
-            currentSize++;
         }
+        currentSize++;
     }
 
     /**
@@ -118,7 +117,7 @@ public class MyLinkedListT4<T> {
 
 
     /**
-     * remove lasty from a linked list
+     * remove last from the list
      * @return removed element or null if the linked list is empty
      */
     public T removeLast(){
@@ -142,7 +141,7 @@ public class MyLinkedListT4<T> {
     /**
      * remove an object from a linked list
      * @param obj to be removed
-     * @return
+     * @return the data of the removed node
      */
     public T remove(T obj){
         Node<T> current = head, previous = null;

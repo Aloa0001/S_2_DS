@@ -1,8 +1,6 @@
 package task_3;
 
-import java.util.LinkedList;
-import java.util.NoSuchElementException;
-import java.util.Queue;
+import java.util.*;
 
 public class StackWithOneQueue<E> {
 
@@ -86,5 +84,13 @@ public class StackWithOneQueue<E> {
         } else {
             return store.peek();
         }
+    }
+    public String toString(){
+        Stack<E> st = new Stack<>();
+        Queue<E> tmp = store;
+        for(int i = 0; i < store.size(); i++){
+            st.push(tmp.poll());
+        }
+        return Arrays.deepToString(st.toArray());
     }
 }

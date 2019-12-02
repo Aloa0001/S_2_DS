@@ -21,6 +21,24 @@ public class CheckSymbolsForC {
         }
         return valid;
     }
+    public static String balanceChecking(String code) {
+        String valid = "Valid";
+        for (int i = 0; i < code.length(); i++) {
+            if (valid.equals("Valid")) {
+                Stack<Character> active = new Stack<>();
+                Stack<Character> cancel = new Stack<>();
+                char[] words = code.toCharArray();
+                fillStacks(words, active, cancel);
+                checkStacks(active, cancel, valid);
+                if (!active.isEmpty() || !cancel.isEmpty()) {
+                    valid = "NOT Valid";
+                }
+            } else {
+                break;
+            }
+        }
+        return valid;
+    }
     private static void fillStacks(char[] words, Stack<Character> active, Stack<Character> cancel){
         for (int i = 0; i < words.length; i++) {
             if (words[i] == '[' || words[i] == '{') {
@@ -64,7 +82,6 @@ public class CheckSymbolsForC {
             }
         }
     }
-
     public static void main(String[] args) {
         String[] testValid = {"1. int a;", "2. int a; /* random comment */ ", "3. int a; /* for storing width * height */ ",
                 "4. int a = b*c; ", "6. int a = 55; // This is a comment / [ ", "7. public void doIt(int x) {System.out.println(x*100);} ",

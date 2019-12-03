@@ -11,7 +11,7 @@ import task_4.Person;
 
 import java.util.Scanner;
 
-public class MasterMain {
+public class LogicMain {
 
     private static Scanner in = new Scanner(System.in);
     private static QueueWithTwoStacks<Integer> myQueueT = new QueueWithTwoStacks<>();
@@ -54,7 +54,7 @@ public class MasterMain {
         String answer;
         boolean condition = false;
         do {
-            System.out.println("Please enter the task you wanna test: \npress 1 for task 1\npress 2 for task2\n" +
+            System.out.println("Please enter the task you wanna test: \npress 1 for task1\npress 2 for task2\n" +
                     "press 3 for task3\npress 4 for task4\npress 5 to exit");
             answer = in.nextLine();
             for (String x : answers) {

@@ -9,6 +9,7 @@ import task_3.StackWithTwoQueues;
 import task_4.AddressBook;
 import task_4.Person;
 
+import java.io.Console;
 import java.util.Scanner;
 
 public class LogicMain {
@@ -54,8 +55,8 @@ public class LogicMain {
         String answer;
         boolean condition = false;
         do {
-            System.out.println("Please enter the task you wanna test: \npress 1 for task1\npress 2 for task2\n" +
-                    "press 3 for task3\npress 4 for task4\npress 5 to exit");
+            System.out.println("\u001B[31m"+"Please enter the task you wanna test: \npress 1 for task1\npress 2 for task2\n" +
+                    "press 3 for task3\npress 4 for task4\npress 5 to exit"+"\u001B[0m");
             answer = in.nextLine();
             for (String x : answers) {
                 if (x.equals(answer)) {
@@ -72,13 +73,13 @@ public class LogicMain {
         do {
             System.out.println("Task 1");
             System.out.println("Welcome to Balance checking for C\nafter you enter a string press enter \n" +
-                    "and the program will reply with true or false\n depending on your input symbols balance\n");
+                    "and the program will reply with true or false\ndepending on your input symbols balance\n");
             System.out.println("\n****Please enter the string to test C, and press enter: ");
             input = in.nextLine();
-            System.out.println("Result for testing balance, task 1a, is: " + CheckSymbolsForC.balanceChecking(input));
+            System.out.println("\u001B[47m"+"\u001B[30m"+"Result for testing balance, task 1a, is: " + CheckSymbolsForC.balanceChecking(input)+"\u001B[0m");
             System.out.println("\n****Please enter the string to test C++, and press enter: ");
             input = in.nextLine();
-            System.out.println("Result for testing balance, task 1b, is: " + CheckSymbolsForCPlusPlus.balanceChecking(input));
+            System.out.println("\u001B[47m"+"\u001B[30m"+"Result for testing balance, task 1b, is: " + CheckSymbolsForCPlusPlus.balanceChecking(input)+"\u001B[0m");
 
             System.out.println("\n press 1 to repeat test\n or other to return to the tasks menu");
             answer = in.nextLine().equals("1");
@@ -117,8 +118,8 @@ public class LogicMain {
                 }
             } while (!integer);
 
-            System.out.println("Result for Josephus ArrayList implementation is: " + JosephusArrayList.josephusProblem(players, m));
-            System.out.println("Result for Josephus LinkedList implementation is: " + JosephusLinkedList.josephusProblem(players, m));
+            System.out.println("\u001B[47m"+"\u001B[30m"+"Result for Josephus ArrayList implementation is: " + JosephusArrayList.josephusProblem(players, m)+"\u001B[0m");
+            System.out.println("\u001B[47m"+"\u001B[30m"+"Result for Josephus LinkedList implementation is: " + JosephusLinkedList.josephusProblem(players, m)+"\u001B[0m");
 
             System.out.println("\n press 1 to repeat test\n or other to return to the tasks menu");
             answer = in.nextLine().equals("1");
@@ -132,12 +133,12 @@ public class LogicMain {
         int task = 0;
         do {
             System.out.println("Task 3\n");
-            System.out.println("Each data structure supports Integers and has size 0");
+            System.out.println("\u001B[31m"+"Each data structure supports Integers and has size 0");
             System.out.println("press 1 to test queue implemented using a stack");
             System.out.println("press 2 to test queue implemented using two stacks");
             System.out.println("press 3 to test stack implemented using a queue");
             System.out.println("press 4 to test stack implemented using two queues");
-            System.out.println("press 5 to return to the menu");
+            System.out.println("press 5 to return to the menu"+"\u001B[0m");
             do {
                 try {
                     task = Integer.parseInt(in.nextLine());
@@ -178,14 +179,14 @@ public class LogicMain {
         boolean integer = false;
         int option = 0;
         do {
-            System.out.println("Select action:");
+            System.out.println("\u001B[31m"+"Select action:");
             System.out.println("press 1 to add element");
             System.out.println("press 2 to remove element ");
             System.out.println("press 3 to peek element ");
             System.out.println("press 4 to poll element ");
             System.out.println("press 5 to make empty  ");
             System.out.println("press 6 for size  ");
-            System.out.println("press 7 to print elements");
+            System.out.println("press 7 to print elements"+"\u001B[0m");
             do {
                 try {
                     option = Integer.parseInt(in.nextLine());
@@ -230,36 +231,36 @@ public class LogicMain {
         myQueueO.add(add);
     }
     private static void Qpeek() {
-        System.out.println(myQueueO.peek());
+        System.out.println("\u001B[47m"+"\u001B[30m"+myQueueO.peek()+"\u001B[0m");
     }
     private static void Qpoll() {
-        System.out.println(myQueueO.poll());
+        System.out.println("\u001B[47m"+"\u001B[30m"+myQueueO.poll()+"\u001B[0m");
     }
     private static void Qremove() {
-        System.out.println(myQueueO.remove());
+        System.out.println("\u001B[47m"+"\u001B[30m"+myQueueO.remove()+"\u001B[0m");
     }
     private static void QmakeEmpty() {
         myQueueO.makeEmpty();
     }
     private static void Qsize() {
-        System.out.println(myQueueO.size());
+        System.out.println("\u001B[47m"+"\u001B[30m"+myQueueO.size()+"\u001B[0m");
     }
     private static void Qprint() {
-        System.out.println(myQueueO.toString());
+        System.out.println("\u001B[47m"+"\u001B[30m"+myQueueO.toString()+"\u001B[0m");
     }
     private static void testQueueTwoStacks() {
         boolean answer = false;
         boolean integer = false;
         int option = 0;
         do {
-            System.out.println("Select action:");
+            System.out.println("\u001B[31m"+"Select action:");
             System.out.println("press 1 to add element");
             System.out.println("press 2 to remove element ");
             System.out.println("press 3 to peek element ");
             System.out.println("press 4 to poll element ");
             System.out.println("press 5 to make empty  ");
             System.out.println("press 6 for size  ");
-            System.out.println("press 7 to print elements");
+            System.out.println("press 7 to print elements"+"\u001B[0m");
             do {
                 try {
                     option = Integer.parseInt(in.nextLine());
@@ -304,36 +305,36 @@ public class LogicMain {
         myQueueT.add(add);
     }
     private static void QTpeek() {
-        System.out.println(myQueueT.peek());
+        System.out.println("\u001B[47m"+"\u001B[30m"+myQueueT.peek()+"\u001B[0m");
     }
     private static void QTpoll() {
-        System.out.println(myQueueT.poll());
+        System.out.println("\u001B[47m"+"\u001B[30m"+myQueueT.poll()+"\u001B[0m");
     }
     private static void QTremove() {
-        System.out.println(myQueueT.remove());
+        System.out.println("\u001B[47m"+"\u001B[30m"+myQueueT.remove()+"\u001B[0m");
     }
     private static void QTmakeEmpty() {
         myQueueT.makeEmpty();
     }
     private static void QTsize() {
-        System.out.println(myQueueT.size());
+        System.out.println("\u001B[47m"+"\u001B[30m"+myQueueT.size()+"\u001B[0m");
     }
     private static void QTprint() {
-        System.out.println(myQueueT.toString());
+        System.out.println("\u001B[47m"+"\u001B[30m"+myQueueT.toString()+"\u001B[0m");
     }
     private static void testStackOneQueue() {
         boolean answer = false;
         boolean integer = false;
         int option = 0;
         do {
-            System.out.println("Select action:");
+            System.out.println("\u001B[31m"+"Select action:");
             System.out.println("press 1 to push element");
             System.out.println("press 2 to remove element ");
             System.out.println("press 3 to peek element ");
             System.out.println("press 4 to pop element ");
             System.out.println("press 5 to make empty  ");
             System.out.println("press 6 for size  ");
-            System.out.println("press 7 to print elements");
+            System.out.println("press 7 to print elements"+"\u001B[0m");
             do {
                 try {
                     option = Integer.parseInt(in.nextLine());
@@ -378,36 +379,36 @@ public class LogicMain {
         myStackO.push(add);
     }
     private static void Speek() {
-        System.out.println(myStackO.peek());
+        System.out.println("\u001B[47m"+"\u001B[30m"+myStackO.peek()+"\u001B[0m");
     }
     private static void Spop() {
-        System.out.println(myStackO.pop());
+        System.out.println("\u001B[47m"+"\u001B[30m"+myStackO.pop()+"\u001B[0m");
     }
     private static void Sremove() {
-        System.out.println(myStackO.remove());
+        System.out.println("\u001B[47m"+"\u001B[30m"+myStackO.remove()+"\u001B[0m");
     }
     private static void SmakeEmpty() {
         myStackO.makeEmpty();
     }
     private static void Ssize() {
-        System.out.println(myStackO.size());
+        System.out.println("\u001B[47m"+"\u001B[30m"+myStackO.size()+"\u001B[0m");
     }
     private static void Sprint() {
-        System.out.println(myStackO.toString());
+        System.out.println("\u001B[47m"+"\u001B[30m"+myStackO.toString()+"\u001B[0m");
     }
     private static void testStackTwoQueues() {
         boolean answer = false;
         boolean integer = false;
         int option = 0;
         do {
-            System.out.println("Select action:");
+            System.out.println("\u001B[31m"+"Select action:");
             System.out.println("press 1 to push element");
             System.out.println("press 2 to remove element ");
             System.out.println("press 3 to peek element ");
             System.out.println("press 4 to pop element ");
             System.out.println("press 5 to make empty  ");
             System.out.println("press 6 for size  ");
-            System.out.println("press 7 to print elements");
+            System.out.println("press 7 to print elements"+"\u001B[0m");
             do {
                 try {
                     option = Integer.parseInt(in.nextLine());
@@ -452,22 +453,22 @@ public class LogicMain {
         myStackT.push(add);
     }
     private static void STpeek() {
-        System.out.println(myStackT.peek());
+        System.out.println("\u001B[47m"+"\u001B[30m"+myStackT.peek()+"\u001B[0m");
     }
     private static void STpop() {
-        System.out.println(myStackT.pop());
+        System.out.println("\u001B[47m"+"\u001B[30m"+myStackT.pop()+"\u001B[0m");
     }
     private static void STremove() {
-        System.out.println(myStackT.remove());
+        System.out.println("\u001B[47m"+"\u001B[30m"+myStackT.remove()+"\u001B[0m");
     }
     private static void STmakeEmpty() {
         myStackT.makeEmpty();
     }
     private static void STsize() {
-        System.out.println("size:  "+myStackT.size());
+        System.out.println("\u001B[47m"+"\u001B[30m"+"size:  "+myStackT.size()+"\u001B[0m");
     }
     private static void STprint() {
-        System.out.println(myStackT.toString());
+        System.out.println("\u001B[47m"+"\u001B[30m"+myStackT.toString()+"\u001B[0m");
     }
     private static void testTask4() {
         boolean answer = false;
@@ -477,10 +478,10 @@ public class LogicMain {
             System.out.println("Task 4:");
             System.out.println("You can add/ remove people to the address book\n" +
                     " or print the address book content");
-            System.out.println("Select action:");
+            System.out.println("\u001B[31m"+"Select action:");
             System.out.println("press 1 to add a new person");
             System.out.println("press 2 to remove a person by list index ");
-            System.out.println("press 3 to print the adress book content ");
+            System.out.println("press 3 to print the adress book content "+"\u001B[0m");
             do {
                 try {
                     option = Integer.parseInt(in.nextLine());
@@ -534,8 +535,8 @@ public class LogicMain {
     }
     private static void printAddressBook(){
         for (int i = 0; i < myAddressBook.getSize(); i++) {
-            System.out.println(myAddressBook.getPerson(i));
+            System.out.println("\u001B[47m"+"\u001B[30m"+myAddressBook.getPerson(i));
         }
-        System.out.println("_____________________________________________");
+        System.out.println("_____________________________________________"+"\u001B[0m");
     }
 }

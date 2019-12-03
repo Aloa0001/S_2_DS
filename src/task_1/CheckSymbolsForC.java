@@ -43,35 +43,35 @@ public class CheckSymbolsForC {
         return valid;
     }
 
-    private static void fillStacks(char[] words, Stack<Character> active, Stack<Character> cancel) {
-
-        for (int i = 0; i < words.length; i++) {
-
-            if (words[i] == '[' || words[i] == '{') {
-                active.push(words[i]);
-            }
-            if (words[i] == ']' || words[i] == '}') {
-                cancel.push(words[i]);
-            }
-            if (i < words.length - 1) {
-                if (words[i] == words[i + 1] && words[i + 1] == '/') {
-                    break;
-                }
-                if (words[i] == '/' && words[i + 1] == '*') {
-                    active.push(words[i]);
-                    active.push(words[i + 1]);
-                }
-                if (words[i] == '/' && words[i + 1] == '*') {
-                    active.push(words[i]);
-                    active.push(words[i + 1]);
-                }
-                if (words[i] == '*' && words[i + 1] == '/') {
-                    cancel.push(words[i]);
-                    cancel.push(words[i + 1]);
-                }
-            }
-        }
-    }
+//    private static void fillStacks(char[] words, Stack<Character> active, Stack<Character> cancel) {
+//
+//        for (int i = 0; i < words.length; i++) {
+//
+//            if (words[i] == '[' || words[i] == '{') {
+//                active.push(words[i]);
+//            }
+//            if (words[i] == ']' || words[i] == '}') {
+//                cancel.push(words[i]);
+//            }
+//            if (i < words.length - 1) {
+//                if (words[i] == words[i + 1] && words[i + 1] == '/') {
+//                    break;
+//                }
+//                if (words[i] == '/' && words[i + 1] == '*') {
+//                    active.push(words[i]);
+//                    active.push(words[i + 1]);
+//                }
+//                if (words[i] == '/' && words[i + 1] == '*') {
+//                    active.push(words[i]);
+//                    active.push(words[i + 1]);
+//                }
+//                if (words[i] == '*' && words[i + 1] == '/') {
+//                    cancel.push(words[i]);
+//                    cancel.push(words[i + 1]);
+//                }
+//            }
+//        }
+//    }
 
     private static void fillStacksNew(char[] words, Stack<Character> active, Stack<Character> cancel) {
         int distance = 0;
@@ -88,11 +88,11 @@ public class CheckSymbolsForC {
                         break;
                     }
                     if (words[i] == '/' && words[i + 1] == '*') {
-                        distance = i;
+                        distance = i + 1;
                     }
                 }
             } else {
-                if (words[i] == '/' && words[i - 1] == '*' && i - distance > 1) {
+                if (words[i] == '/' && words[i - 1] == '*' && i - distance > 2) {
                     distance = 0;
                 }
             }
@@ -117,7 +117,7 @@ public class CheckSymbolsForC {
     }
 
     public static void main(String[] args) {
-        String testValid = "[][]{}/*[[[*/   kjhgkhfjg //[[[[";
+        String testValid = "/*[[[   [[*/[  ][]{}llkk//   [[[[";
         String testNonValid = "{1. int [arr = new int[10];  2. int b = 5; /* this is a comment / 3. {a=b; 4. } }";
         System.out.println(balanceChecking(testValid));
         System.out.println(balanceChecking(testNonValid));

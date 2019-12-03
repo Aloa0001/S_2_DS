@@ -9,7 +9,6 @@ import task_3.StackWithTwoQueues;
 import task_4.AddressBook;
 import task_4.Person;
 
-import java.io.Console;
 import java.util.Scanner;
 
 public class LogicMain {
@@ -101,9 +100,9 @@ public class LogicMain {
                 try {
                     players = Integer.parseInt(in.nextLine());
                     integer = true;
-                    System.out.println("Valid input");
+                    System.out.println("\u001B[34m"+ "Valid input"  +"\u001B[0m");
                 } catch (NumberFormatException e) {
-                    System.out.println("input is not an int value");
+                    System.out.println("\u001B[34m"+ "input is not an int value"  +"\u001B[0m");
                 }
             } while (!integer);
             integer = false;
@@ -112,9 +111,9 @@ public class LogicMain {
                 try {
                     m = Integer.parseInt(in.nextLine());
                     integer = true;
-                    System.out.println("Valid input");
+                    System.out.println("\u001B[34m"+ "Valid input"  +"\u001B[0m");
                 } catch (NumberFormatException e) {
-                    System.out.println("input is not an int value");
+                    System.out.println("\u001B[34m"+ "input is not an int value"  +"\u001B[0m");
                 }
             } while (!integer);
 
@@ -143,9 +142,9 @@ public class LogicMain {
                 try {
                     task = Integer.parseInt(in.nextLine());
                     integer = true;
-                    System.out.println("Valid input");
+                    System.out.println("\u001B[34m"+ "Valid input"  +"\u001B[0m");
                 } catch (NumberFormatException e) {
-                    System.out.println("input is not an int value");
+                    System.out.println("\u001B[34m"+ "input is not an int value"  +"\u001B[0m");
                 }
             } while (!integer);
             if (task == 1) {
@@ -191,9 +190,9 @@ public class LogicMain {
                 try {
                     option = Integer.parseInt(in.nextLine());
                     integer = true;
-                    System.out.println("Valid input");
+                    System.out.println("\u001B[34m"+ "Valid input"  +"\u001B[0m");
                 } catch (NumberFormatException e) {
-                    System.out.println("input is not an int value");
+                    System.out.println("\u001B[34m"+ "input is not an int value"  +"\u001B[0m");
                 }
             } while (!integer);
             if (option == 1)
@@ -218,14 +217,14 @@ public class LogicMain {
     private static void Qadd() {
         boolean integer = false;
         int add = 0;
-        System.out.println("Enter integer value to add:");
+        System.out.println("\u001B[34m"+  "Enter integer value to add:" +"\u001B[0m");
         do {
             try {
                 add = Integer.parseInt(in.nextLine());
                 integer = true;
-                System.out.println("Valid input");
+                System.out.println("\u001B[34m"+ "Valid input"  +"\u001B[0m");
             } catch (NumberFormatException e) {
-                System.out.println("input is not an int value");
+                System.out.println("\u001B[34m"+ "input is not an int value"  +"\u001B[0m");
             }
         } while (!integer);
         myQueueO.add(add);
@@ -265,9 +264,9 @@ public class LogicMain {
                 try {
                     option = Integer.parseInt(in.nextLine());
                     integer = true;
-                    System.out.println("Valid input");
+                    System.out.println("\u001B[34m"+ "Valid input"  +"\u001B[0m");
                 } catch (NumberFormatException e) {
-                    System.out.println("input is not an int value");
+                    System.out.println("\u001B[34m"+ "input is not an int value"  +"\u001B[0m");
                 }
             } while (!integer);
             if (option == 1)
@@ -292,14 +291,14 @@ public class LogicMain {
     private static void QTadd() {
         boolean integer = false;
         int add = 0;
-        System.out.println("Enter integer value to add:");
+        System.out.println("\u001B[34m"+ "Enter integer value to add:"  +"\u001B[0m");
         do {
             try {
                 add = Integer.parseInt(in.nextLine());
                 integer = true;
-                System.out.println("Valid input");
+                System.out.println("\u001B[34m"+  "Valid input" +"\u001B[0m");
             } catch (NumberFormatException e) {
-                System.out.println("input is not an int value");
+                System.out.println("\u001B[34m"+ "input is not an int value"  +"\u001B[0m");
             }
         } while (!integer);
         myQueueT.add(add);
@@ -339,9 +338,9 @@ public class LogicMain {
                 try {
                     option = Integer.parseInt(in.nextLine());
                     integer = true;
-                    System.out.println("Valid input");
+                    System.out.println("\u001B[34m"+ "Valid input"  +"\u001B[0m");
                 } catch (NumberFormatException e) {
-                    System.out.println("input is not an int value");
+                    System.out.println("\u001B[34m"+ "input is not an int value"  +"\u001B[0m");
                 }
             } while (!integer);
             if (option == 1)
@@ -366,14 +365,14 @@ public class LogicMain {
     private static void Spush() {
         boolean integer = false;
         int add = 0;
-        System.out.println("Enter integer value to add:");
+        System.out.println("\u001B[34m"+ "Enter integer value to add:"  +"\u001B[0m");
         do {
             try {
                 add = Integer.parseInt(in.nextLine());
                 integer = true;
-                System.out.println("Valid input");
+                System.out.println("\u001B[34m"+ "Valid input"  +"\u001B[0m");
             } catch (NumberFormatException e) {
-                System.out.println("input is not an int value");
+                System.out.println("\u001B[34m"+  "input is not an int value" +"\u001B[0m");
             }
         } while (!integer);
         myStackO.push(add);
@@ -413,9 +412,9 @@ public class LogicMain {
                 try {
                     option = Integer.parseInt(in.nextLine());
                     integer = true;
-                    System.out.println("Valid input");
+                    System.out.println("\u001B[34m"+ "Valid input"  +"\u001B[0m");
                 } catch (NumberFormatException e) {
-                    System.out.println("input is not an int value");
+                    System.out.println("\u001B[34m"+ "input is not an int value"  +"\u001B[0m");
                 }
             } while (!integer);
             if (option == 1)
@@ -440,14 +439,14 @@ public class LogicMain {
     private static void STpush() {
         boolean integer = false;
         int add = 0;
-        System.out.println("Enter integer value to add:");
+        System.out.println("\u001B[34m"+ "Enter integer value to add:"  +"\u001B[0m");
         do {
             try {
                 add = Integer.parseInt(in.nextLine());
                 integer = true;
-                System.out.println("Valid input");
+                System.out.println("\u001B[34m"+ "Valid input"  +"\u001B[0m");
             } catch (NumberFormatException e) {
-                System.out.println("input is not an int value");
+                System.out.println("\u001B[34m"+ "input is not an int value"  +"\u001B[0m");
             }
         } while (!integer);
         myStackT.push(add);
@@ -486,9 +485,9 @@ public class LogicMain {
                 try {
                     option = Integer.parseInt(in.nextLine());
                     integer = true;
-                    System.out.println("Valid input");
+                    System.out.println("\u001B[34m"+ "Valid input"  +"\u001B[0m");
                 } catch (NumberFormatException e) {
-                    System.out.println("input is not an int value");
+                    System.out.println("\u001B[34m"+ "input is not an int value"  +"\u001B[0m");
                 }
             } while (!integer);
             if (option == 1)
@@ -506,11 +505,12 @@ public class LogicMain {
     private static void addNewPerson(){
         String name = null;
         String address = null;
-        System.out.println("Enter the name of the person:");
+        System.out.println("\u001B[34m"+ "Enter the name of the person:"  +"\u001B[0m");
         name = in.nextLine();
-        System.out.println("Enter the address of "+ name);
+        System.out.println("\u001B[34m"+"Enter the address of "+ name+"\u001B[0m");
         address = in.nextLine();
         myAddressBook.addNewNameAndAddress(new Person(name, address));
+        System.out.println("\u001B[34m"+"New person added"+"\u001B[0m");
     }
     private static void removePerson(){
         boolean integer = false;
@@ -523,7 +523,14 @@ public class LogicMain {
                 if (name < myAddressBook.getSize() &&  myAddressBook.getSize() > 0){
                     integer = true;
                 }else{
-                    System.out.println("Your request is outside the range of the address book indexes");
+                    System.out.println("\u001B[34m"+"The address book is empty or\n" +
+                            "the index you peeked is outside \nthe range of the list"+"\u001B[0m");
+                    if (myAddressBook.getSize() > 0){
+                        System.out.println("\u001B[34m"+"\nThe available range is between 0 and "+
+                                (myAddressBook.getSize()-1)+"\u001B[0m");
+                    }else{
+                        System.out.println("\u001B[34m"+ "\nThe list is empty" +"\u001B[0m");
+                    }
                     testTask4();
                 }
                 System.out.println("Valid input");
@@ -535,8 +542,8 @@ public class LogicMain {
     }
     private static void printAddressBook(){
         for (int i = 0; i < myAddressBook.getSize(); i++) {
-            System.out.println("\u001B[47m"+"\u001B[30m"+myAddressBook.getPerson(i));
+            System.out.println("\u001B[47m"+"\u001B[30m"+myAddressBook.getPerson(i)+"\u001B[0m");
         }
-        System.out.println("_____________________________________________"+"\u001B[0m");
+        System.out.println("_____________________________________________");
     }
 }

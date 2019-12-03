@@ -7,6 +7,7 @@ import task_3.QueueWithTwoStacks;
 import task_3.StackWithOneQueue;
 import task_3.StackWithTwoQueues;
 import task_4.AddressBook;
+import task_4.Person;
 
 import java.util.Arrays;
 import java.util.Scanner;
@@ -18,6 +19,7 @@ public class MasterMain {
     private static QueueWithOneStack<Integer> myQueueO = new QueueWithOneStack<>();
     private static StackWithTwoQueues<Integer> myStackT = new StackWithTwoQueues<>();
     private static StackWithOneQueue<Integer> myStackO = new StackWithOneQueue<>();
+    private static AddressBook myAddressBook = new AddressBook();
 
     public static void main(String[] args) {
         seminarMenu();
@@ -468,8 +470,73 @@ public class MasterMain {
     private static void STprint() {
         System.out.println(myStackT.toString());
     }
-
     private static void testTask4() {
+        boolean answer = false;
+        boolean integer = false;
+        int option = 0;
+        do {
+            System.out.println("Task 4:");
+            System.out.println("You can add/ remove people to the address book\n" +
+                    " or print the address book content");
+            System.out.println("Select action:");
+            System.out.println("press 1 to add a new person");
+            System.out.println("press 2 to remove a person by list index ");
+            System.out.println("press 3 to print the adress book content ");
+            do {
+                try {
+                    option = Integer.parseInt(in.nextLine());
+                    integer = true;
+                    System.out.println("Valid input");
+                } catch (NumberFormatException e) {
+                    System.out.println("input is not an int value");
+                }
+            } while (!integer);
+            if (option == 1)
+               addNewPerson();
+            if (option == 2)
+                removePerson();
+            if (option == 3)
+               printAddressBook();
 
+            System.out.println("\n  press 1 to continue testing this structure \n or other to return to the tasks menu");
+            answer = in.nextLine().equals("1");
+        } while (answer);
+        testTask(chooseTaskToTest());
+    }
+    private static void addNewPerson(){
+        String name = null;
+        String address = null;
+        System.out.println("Enter the name of the person:");
+        name = in.nextLine();
+        System.out.println("Enter the address of "+ name);
+        address = in.nextLine();
+        myAddressBook.addNewNameAndAddress(new Person(name, address));
+    }
+    private static void removePerson(){
+        boolean integer = false;
+        int name = 0;
+        do {
+            System.out.println("Enter the index at which the person\n" +
+                    "to be removed is in the address book");
+            try {
+                name = Integer.parseInt(in.nextLine());
+                if (name < myAddressBook.getSize() &&  myAddressBook.getSize() > 0){
+                    integer = true;
+                }else{
+                    System.out.println("Your request is outside the range of the address book indexes");
+                    testTask4();
+                }
+                System.out.println("Valid input");
+            } catch (NumberFormatException e) {
+                System.out.println("input is not an int value");
+            }
+        } while (!integer);
+        myAddressBook.remove(myAddressBook.getPerson(name));
+    }
+    private static void printAddressBook(){
+        for (int i = 0; i < myAddressBook.getSize(); i++) {
+            System.out.println(myAddressBook.getPerson(i));
+        }
+        System.out.println("_____________________________________________");
     }
 }

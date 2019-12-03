@@ -79,9 +79,7 @@ public class MyLinkedListT4<T> {
      */
     public T get(int index){
         Node<T> current = head;
-        for (int i = 1; i <= index; i++){
-            current = current.next;
-        }
+        for (int i = 1; i <= index; i++) current = current.next;
         return current.data;
     }
 

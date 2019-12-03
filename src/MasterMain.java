@@ -9,7 +9,6 @@ import task_3.StackWithTwoQueues;
 import task_4.AddressBook;
 import task_4.Person;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class MasterMain {

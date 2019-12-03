@@ -54,7 +54,7 @@ public class LogicMain {
         String answer;
         boolean condition = false;
         do {
-            System.out.println("\u001B[31m"+"Please enter the task you wanna test: \npress 1 for task1\npress 2 for task2\n" +
+            System.out.println("\u001B[31m"+"Please enter the task you want to test: \npress 1 for task1\npress 2 for task2\n" +
                     "press 3 for task3\npress 4 for task4\npress 5 to exit"+"\u001B[0m");
             answer = in.nextLine();
             for (String x : answers) {

@@ -28,14 +28,13 @@ public class JosephusArrayList {
     }
     public static int josephusProblemIterator(int players, int m) {
         int winner = 0;
-        Integer temp = 0;
         List<Integer> pl = new LinkedList<>();
         for (int i = 1; i <= players; i++)
             pl.add(i);
         while (pl.size() > 1) {
             ListIterator iterator = pl.listIterator();
             winner = (winner + m)%pl.size();
-            temp = (Integer) iterator.next();
+            int temp = (Integer) iterator.next();
             while (!pl.get(winner).equals(temp)){
                 temp = (Integer) iterator.next();
             }
@@ -45,7 +44,7 @@ public class JosephusArrayList {
     }
 
     public static void main(String[] args) {
-        int elements = 7; //nbr of people
+        int elements = 100; //nbr of people
         m = 3; // nbr of people to pass the potato
         for(int i = 1; i <= elements; i++)
             people.add(i);

@@ -1,13 +1,11 @@
 package task_2;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.ArrayList;
-import java.util.Iterator;
+import java.util.*;
 
 public class JosephusArrayList {
     private static ArrayList<Integer> people = new ArrayList<>();
     private static int m;
-    private static Iterator iterator = people.iterator();
 
     public static int josephusProblem(@NotNull ArrayList<Integer> people, int m){
         int winner = 0;
@@ -28,31 +26,31 @@ public class JosephusArrayList {
         }
         return people.get(0);
     }
-    public static int josephusProblemIterator(int players, int m){
+    public static int josephusProblemIterator(int players, int m) {
         int winner = 0;
-        int temp = 0;
-        ArrayList<Integer> people = new ArrayList<>();
-        for(int i = 1; i <= players; i++)
-            people.add(i);
-        while(winner != (winner + m)%people.size()){
-                iterator.remove();
-        }
-        return people.get(0);
-    }
-    public static int josephusProblemIterator(@NotNull ArrayList<Integer> people, int m){
-        int winner = 0;
-        while(winner != (winner + m)%people.size()){
+        Integer temp = 0;
+        List<Integer> pl = new LinkedList<>();
+        for (int i = 1; i <= players; i++)
+            pl.add(i);
+        while (pl.size() > 1) {
+            ListIterator iterator = pl.listIterator();
+            winner = (winner + m)%pl.size();
+            temp = (Integer) iterator.next();
+            while (!pl.get(winner).equals(temp)){
+                temp = (Integer) iterator.next();
+            }
             iterator.remove();
         }
-        return people.get(0);
+        return pl.get(0);
     }
 
     public static void main(String[] args) {
-        int elements = 5; //nbr of people
-        m = 1; // nbr of people to pass the potato
+        int elements = 7; //nbr of people
+        m = 3; // nbr of people to pass the potato
         for(int i = 1; i <= elements; i++)
             people.add(i);
         System.out.println(josephusProblem(people, m));//  return the winner
-        System.out.println(josephusProblemIterator(people, m));//  return the winner
+        System.out.println(josephusProblem(elements, m));//  return the winner
+        System.out.println(josephusProblemIterator(elements, m));//  return the winner
     }
 }

@@ -118,6 +118,7 @@ public class LogicMain {
             } while (!integer);
 
             System.out.println("\u001B[47m"+"\u001B[30m"+"Result for Josephus ArrayList implementation is: " + JosephusArrayList.josephusProblem(players, m)+"\u001B[0m");
+            System.out.println("\u001B[47m"+"\u001B[30m"+"Result for Josephus Iterator implementation is: " + JosephusArrayList.josephusProblemIterator(players, m)+"\u001B[0m");
             System.out.println("\u001B[47m"+"\u001B[30m"+"Result for Josephus LinkedList implementation is: " + JosephusLinkedList.josephusProblem(players, m)+"\u001B[0m");
 
             System.out.println("\n press 1 to repeat test\n or other to return to the tasks menu");

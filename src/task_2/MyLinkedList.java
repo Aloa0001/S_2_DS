@@ -1,6 +1,6 @@
 package task_2;
 
-public class MyLinkedList<E> {
+public class MyLinkedList<E>  {
     private Node<E> head;
     private Node<E> tail;
     private int currentSize;

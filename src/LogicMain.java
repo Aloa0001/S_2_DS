@@ -20,6 +20,8 @@ public class LogicMain {
     private static StackWithOneQueue<Integer> myStackO = new StackWithOneQueue<>();
     private static AddressBook myAddressBook = new AddressBook();
 
+
+
     public static void main(String[] args) {
         seminarMenu();
     }

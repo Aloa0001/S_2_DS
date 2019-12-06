@@ -27,6 +27,7 @@ public class LogicMain {
     private static void seminarMenu() {
         testTask(chooseTaskToTest());
     }
+
     private static void testTask(int task) {
         if (task == 1) {
             //test task
@@ -49,13 +50,14 @@ public class LogicMain {
         }
 
     }
+
     private static int chooseTaskToTest() {
         String[] answers = {"1", "2", "3", "4", "5"};
         String answer;
         boolean condition = false;
         do {
-            System.out.println("\u001B[31m"+"Please enter the task you want to test: \npress 1 for task1\npress 2 for task2\n" +
-                    "press 3 for task3\npress 4 for task4\npress 5 to exit"+"\u001B[0m");
+            System.out.println("\u001B[31m" + "Please enter the task you want to test: \npress 1 for task1\npress 2 for task2\n" +
+                    "press 3 for task3\npress 4 for task4\n\npress 5 to exit" + "\u001B[0m");
             answer = in.nextLine();
             for (String x : answers) {
                 if (x.equals(answer)) {
@@ -66,88 +68,89 @@ public class LogicMain {
         } while (!condition);
         return Integer.parseInt(answer);
     }
+
     private static void testTask1() {
         boolean answer = false;
         String input;
+        System.out.println("Task 1");
+        System.out.println("Welcome to Balance checking for C\nafter you enter a string press enter\n" +
+                "and the program will reply with true or false\ndepending on your input symbols balance\n");
         do {
-            System.out.println("Task 1");
-            System.out.println("Welcome to Balance checking for C\nafter you enter a string press enter \n" +
-                    "and the program will reply with true or false\ndepending on your input symbols balance\n");
             System.out.println("\n****Please enter the string to test C, and press enter: ");
             input = in.nextLine();
-            System.out.println("\u001B[47m"+"\u001B[30m"+"Result for testing balance, task 1a, is: " + CheckSymbolsForC.balanceChecking(input)+"\u001B[0m");
+            System.out.println("\u001B[47m" + "\u001B[30m" + "Result for testing balance, task 1a, is: " + CheckSymbolsForC.balanceChecking(input) + "\u001B[0m");
             System.out.println("\n****Please enter the string to test C++, and press enter: ");
             input = in.nextLine();
-            System.out.println("\u001B[47m"+"\u001B[30m"+"Result for testing balance, task 1b, is: " + CheckSymbolsForCPlusPlus.balanceChecking(input)+"\u001B[0m");
-
+            System.out.println("\u001B[47m" + "\u001B[30m" + "Result for testing balance, task 1b, is: " + CheckSymbolsForCPlusPlus.balanceChecking(input) + "\u001B[0m");
             System.out.println("\n press 1 to repeat test\n or other to return to the tasks menu");
             answer = in.nextLine().equals("1");
-
         } while (answer);
         testTask(chooseTaskToTest());
     }
+
     private static void testTask2() {
         boolean answer = false;
-        boolean integer = false;
+        boolean integer;
         int players = 0;
         int m = 0;
+        System.out.println("Task 2");
+        System.out.println("Welcome to Josephus problem\nenter first the number of players \n" +
+                " second, enter the M value\nthe output will show the winner\n");
         do {
-            System.out.println("Task 2");
-            System.out.println("Welcome to Josephus problem\nenter first the number of players \n" +
-                    " second, enter the M value\n the output will show the winner\n");
             do {
                 System.out.println("\n****Please enter the number of players: ");
                 try {
+                    integer = false;
                     players = Integer.parseInt(in.nextLine());
-                    integer = true;
-                    System.out.println("\u001B[34m"+ "Valid input"  +"\u001B[0m");
+                    System.out.println("\u001B[34m" + "Valid input" + "\u001B[0m");
                 } catch (NumberFormatException e) {
-                    System.out.println("\u001B[34m"+ "input is not an int value"  +"\u001B[0m");
+                    System.out.println("\u001B[34m" + "input is not an int value" + "\u001B[0m");
+                    integer = true;
                 }
-            } while (!integer);
+            } while (integer);
             integer = false;
             do {
                 System.out.println("\n****Please enter M value: ");
                 try {
+                    integer = false;
                     m = Integer.parseInt(in.nextLine());
-                    integer = true;
-                    System.out.println("\u001B[34m"+ "Valid input"  +"\u001B[0m");
+                    System.out.println("\u001B[34m" + "Valid input" + "\u001B[0m");
                 } catch (NumberFormatException e) {
-                    System.out.println("\u001B[34m"+ "input is not an int value"  +"\u001B[0m");
+                    System.out.println("\u001B[34m" + "input is not a valid int value" + "\u001B[0m");
+                    integer = true;
                 }
-            } while (!integer);
-
-            System.out.println("\u001B[47m"+"\u001B[30m"+"Result for Josephus ArrayList implementation is: " + JosephusArrayList.josephusProblem(players, m)+"\u001B[0m");
-            System.out.println("\u001B[47m"+"\u001B[30m"+"Result for Josephus Iterator implementation is: " + JosephusArrayList.josephusProblemIterator(players, m)+"\u001B[0m");
-            System.out.println("\u001B[47m"+"\u001B[30m"+"Result for Josephus LinkedList implementation is: " + JosephusLinkedList.josephusProblem(players, m)+"\u001B[0m");
-
+            } while (integer);
+            System.out.println("\u001B[47m" + "\u001B[30m" + "Result for Josephus ArrayList implementation is: " + JosephusArrayList.josephusProblem(players, m) + "\u001B[0m");
+            System.out.println("\u001B[47m" + "\u001B[30m" + "Result for Josephus Iterator implementation is: " + JosephusArrayList.josephusProblemIterator(players, m) + "\u001B[0m");
+            System.out.println("\u001B[47m" + "\u001B[30m" + "Result for Josephus LinkedList implementation is: " + JosephusLinkedList.josephusProblem(players, m) + "\u001B[0m");
             System.out.println("\n press 1 to repeat test\n or other to return to the tasks menu");
             answer = in.nextLine().equals("1");
-
         } while (answer);
         testTask(chooseTaskToTest());
     }
+
     private static void testTask3() {
         boolean answer = false;
-        boolean integer = false;
+        boolean integer;
         int task = 0;
+        System.out.println("Task 3\n");
         do {
-            System.out.println("Task 3\n");
-            System.out.println("\u001B[31m"+"Each data structure supports Integers and has size 0");
+            System.out.println("\u001B[31m" + "Each data structure supports Integers and has size 0");
             System.out.println("press 1 to test queue implemented using a stack");
             System.out.println("press 2 to test queue implemented using two stacks");
             System.out.println("press 3 to test stack implemented using a queue");
             System.out.println("press 4 to test stack implemented using two queues");
-            System.out.println("press 5 to return to the menu"+"\u001B[0m");
+            System.out.println("press 5 to return to the menu" + "\u001B[0m");
             do {
                 try {
+                    integer = false;
                     task = Integer.parseInt(in.nextLine());
-                    integer = true;
-                    System.out.println("\u001B[34m"+ "Valid input"  +"\u001B[0m");
+                    System.out.println("\u001B[34m" + "Valid input" + "\u001B[0m");
                 } catch (NumberFormatException e) {
-                    System.out.println("\u001B[34m"+ "input is not an int value"  +"\u001B[0m");
+                    System.out.println("\u001B[34m" + "input is not an int value" + "\u001B[0m");
+                    integer = true;
                 }
-            } while (!integer);
+            } while (integer);
             if (task == 1) {
                 //test task
                 testQueueOneStack();
@@ -174,28 +177,30 @@ public class LogicMain {
         } while (answer);
         testTask(chooseTaskToTest());
     }
+
     private static void testQueueOneStack() {
         boolean answer = false;
-        boolean integer = false;
+        boolean integer;
         int option = 0;
         do {
-            System.out.println("\u001B[31m"+"Select action:");
+            System.out.println("\u001B[31m" + "Select action:");
             System.out.println("press 1 to add element");
             System.out.println("press 2 to remove element ");
             System.out.println("press 3 to peek element ");
             System.out.println("press 4 to poll element ");
             System.out.println("press 5 to make empty  ");
             System.out.println("press 6 for size  ");
-            System.out.println("press 7 to print elements"+"\u001B[0m");
+            System.out.println("press 7 to print elements" + "\u001B[0m");
             do {
                 try {
+                    integer = false;
                     option = Integer.parseInt(in.nextLine());
-                    integer = true;
-                    System.out.println("\u001B[34m"+ "Valid input"  +"\u001B[0m");
+                    System.out.println("\u001B[34m" + "Valid input" + "\u001B[0m");
                 } catch (NumberFormatException e) {
-                    System.out.println("\u001B[34m"+ "input is not an int value"  +"\u001B[0m");
+                    System.out.println("\u001B[34m" + "input is not an int value" + "\u001B[0m");
+                    integer = true;
                 }
-            } while (!integer);
+            } while (integer);
             if (option == 1)
                 Qadd();
             if (option == 2)
@@ -215,61 +220,71 @@ public class LogicMain {
         } while (answer);
         testTask3();
     }
+
     private static void Qadd() {
-        boolean integer = false;
+        boolean integer;
         int add = 0;
-        System.out.println("\u001B[34m"+  "Enter integer value to add:" +"\u001B[0m");
+        System.out.println("\u001B[34m" + "Enter integer value to add:" + "\u001B[0m");
         do {
             try {
+                integer = false;
                 add = Integer.parseInt(in.nextLine());
-                integer = true;
-                System.out.println("\u001B[34m"+ "Valid input"  +"\u001B[0m");
+                System.out.println("\u001B[34m" + "Valid input" + "\u001B[0m");
             } catch (NumberFormatException e) {
-                System.out.println("\u001B[34m"+ "input is not an int value"  +"\u001B[0m");
+                System.out.println("\u001B[34m" + "input is not an int value" + "\u001B[0m");
+                integer = true;
             }
-        } while (!integer);
+        } while (integer);
         myQueueO.add(add);
     }
+
     private static void Qpeek() {
-        System.out.println("\u001B[47m"+"\u001B[30m"+myQueueO.peek()+"\u001B[0m");
+        System.out.println("\u001B[47m" + "\u001B[30m" + myQueueO.peek() + "\u001B[0m");
     }
+
     private static void Qpoll() {
-        System.out.println("\u001B[47m"+"\u001B[30m"+myQueueO.poll()+"\u001B[0m");
+        System.out.println("\u001B[47m" + "\u001B[30m" + myQueueO.poll() + "\u001B[0m");
     }
+
     private static void Qremove() {
-        System.out.println("\u001B[47m"+"\u001B[30m"+myQueueO.remove()+"\u001B[0m");
+        System.out.println("\u001B[47m" + "\u001B[30m" + myQueueO.remove() + "\u001B[0m");
     }
+
     private static void QmakeEmpty() {
         myQueueO.makeEmpty();
     }
+
     private static void Qsize() {
-        System.out.println("\u001B[47m"+"\u001B[30m"+myQueueO.size()+"\u001B[0m");
+        System.out.println("\u001B[47m" + "\u001B[30m" + myQueueO.size() + "\u001B[0m");
     }
+
     private static void Qprint() {
-        System.out.println("\u001B[47m"+"\u001B[30m"+myQueueO.toString()+"\u001B[0m");
+        System.out.println("\u001B[47m" + "\u001B[30m" + myQueueO.toString() + "\u001B[0m");
     }
+
     private static void testQueueTwoStacks() {
         boolean answer = false;
-        boolean integer = false;
+        boolean integer;
         int option = 0;
         do {
-            System.out.println("\u001B[31m"+"Select action:");
+            System.out.println("\u001B[31m" + "Select action:");
             System.out.println("press 1 to add element");
             System.out.println("press 2 to remove element ");
             System.out.println("press 3 to peek element ");
             System.out.println("press 4 to poll element ");
             System.out.println("press 5 to make empty  ");
             System.out.println("press 6 for size  ");
-            System.out.println("press 7 to print elements"+"\u001B[0m");
+            System.out.println("press 7 to print elements" + "\u001B[0m");
             do {
                 try {
+                    integer = false;
                     option = Integer.parseInt(in.nextLine());
-                    integer = true;
-                    System.out.println("\u001B[34m"+ "Valid input"  +"\u001B[0m");
+                    System.out.println("\u001B[34m" + "Valid input" + "\u001B[0m");
                 } catch (NumberFormatException e) {
-                    System.out.println("\u001B[34m"+ "input is not an int value"  +"\u001B[0m");
+                    System.out.println("\u001B[34m" + "input is not an int value" + "\u001B[0m");
+                    integer = true;
                 }
-            } while (!integer);
+            } while (integer);
             if (option == 1)
                 QTadd();
             if (option == 2)
@@ -289,61 +304,71 @@ public class LogicMain {
         } while (answer);
         testTask3();
     }
+
     private static void QTadd() {
-        boolean integer = false;
+        boolean integer;
         int add = 0;
-        System.out.println("\u001B[34m"+ "Enter integer value to add:"  +"\u001B[0m");
+        System.out.println("\u001B[34m" + "Enter integer value to add:" + "\u001B[0m");
         do {
             try {
+                integer = false;
                 add = Integer.parseInt(in.nextLine());
-                integer = true;
-                System.out.println("\u001B[34m"+  "Valid input" +"\u001B[0m");
+                System.out.println("\u001B[34m" + "Valid input" + "\u001B[0m");
             } catch (NumberFormatException e) {
-                System.out.println("\u001B[34m"+ "input is not an int value"  +"\u001B[0m");
+                System.out.println("\u001B[34m" + "input is not an int value" + "\u001B[0m");
+                integer = true;
             }
-        } while (!integer);
+        } while (integer);
         myQueueT.add(add);
     }
+
     private static void QTpeek() {
-        System.out.println("\u001B[47m"+"\u001B[30m"+myQueueT.peek()+"\u001B[0m");
+        System.out.println("\u001B[47m" + "\u001B[30m" + myQueueT.peek() + "\u001B[0m");
     }
+
     private static void QTpoll() {
-        System.out.println("\u001B[47m"+"\u001B[30m"+myQueueT.poll()+"\u001B[0m");
+        System.out.println("\u001B[47m" + "\u001B[30m" + myQueueT.poll() + "\u001B[0m");
     }
+
     private static void QTremove() {
-        System.out.println("\u001B[47m"+"\u001B[30m"+myQueueT.remove()+"\u001B[0m");
+        System.out.println("\u001B[47m" + "\u001B[30m" + myQueueT.remove() + "\u001B[0m");
     }
+
     private static void QTmakeEmpty() {
         myQueueT.makeEmpty();
     }
+
     private static void QTsize() {
-        System.out.println("\u001B[47m"+"\u001B[30m"+myQueueT.size()+"\u001B[0m");
+        System.out.println("\u001B[47m" + "\u001B[30m" + myQueueT.size() + "\u001B[0m");
     }
+
     private static void QTprint() {
-        System.out.println("\u001B[47m"+"\u001B[30m"+myQueueT.toString()+"\u001B[0m");
+        System.out.println("\u001B[47m" + "\u001B[30m" + myQueueT.toString() + "\u001B[0m");
     }
+
     private static void testStackOneQueue() {
         boolean answer = false;
-        boolean integer = false;
+        boolean integer;
         int option = 0;
         do {
-            System.out.println("\u001B[31m"+"Select action:");
+            System.out.println("\u001B[31m" + "Select action:");
             System.out.println("press 1 to push element");
             System.out.println("press 2 to remove element ");
             System.out.println("press 3 to peek element ");
             System.out.println("press 4 to pop element ");
             System.out.println("press 5 to make empty  ");
             System.out.println("press 6 for size  ");
-            System.out.println("press 7 to print elements"+"\u001B[0m");
+            System.out.println("press 7 to print elements" + "\u001B[0m");
             do {
                 try {
+                    integer = false;
                     option = Integer.parseInt(in.nextLine());
-                    integer = true;
-                    System.out.println("\u001B[34m"+ "Valid input"  +"\u001B[0m");
+                    System.out.println("\u001B[34m" + "Valid input" + "\u001B[0m");
                 } catch (NumberFormatException e) {
-                    System.out.println("\u001B[34m"+ "input is not an int value"  +"\u001B[0m");
+                    System.out.println("\u001B[34m" + "input is not an int value" + "\u001B[0m");
+                    integer = true;
                 }
-            } while (!integer);
+            } while (integer);
             if (option == 1)
                 Spush();
             if (option == 2)
@@ -363,61 +388,71 @@ public class LogicMain {
         } while (answer);
         testTask3();
     }
+
     private static void Spush() {
-        boolean integer = false;
+        boolean integer;
         int add = 0;
-        System.out.println("\u001B[34m"+ "Enter integer value to add:"  +"\u001B[0m");
+        System.out.println("\u001B[34m" + "Enter integer value to add:" + "\u001B[0m");
         do {
             try {
+                integer = false;
                 add = Integer.parseInt(in.nextLine());
-                integer = true;
-                System.out.println("\u001B[34m"+ "Valid input"  +"\u001B[0m");
+                System.out.println("\u001B[34m" + "Valid input" + "\u001B[0m");
             } catch (NumberFormatException e) {
-                System.out.println("\u001B[34m"+  "input is not an int value" +"\u001B[0m");
+                System.out.println("\u001B[34m" + "input is not an int value" + "\u001B[0m");
+                integer = true;
             }
-        } while (!integer);
+        } while (integer);
         myStackO.push(add);
     }
+
     private static void Speek() {
-        System.out.println("\u001B[47m"+"\u001B[30m"+myStackO.peek()+"\u001B[0m");
+        System.out.println("\u001B[47m" + "\u001B[30m" + myStackO.peek() + "\u001B[0m");
     }
+
     private static void Spop() {
-        System.out.println("\u001B[47m"+"\u001B[30m"+myStackO.pop()+"\u001B[0m");
+        System.out.println("\u001B[47m" + "\u001B[30m" + myStackO.pop() + "\u001B[0m");
     }
+
     private static void Sremove() {
-        System.out.println("\u001B[47m"+"\u001B[30m"+myStackO.remove()+"\u001B[0m");
+        System.out.println("\u001B[47m" + "\u001B[30m" + myStackO.remove() + "\u001B[0m");
     }
+
     private static void SmakeEmpty() {
         myStackO.makeEmpty();
     }
+
     private static void Ssize() {
-        System.out.println("\u001B[47m"+"\u001B[30m"+myStackO.size()+"\u001B[0m");
+        System.out.println("\u001B[47m" + "\u001B[30m" + myStackO.size() + "\u001B[0m");
     }
+
     private static void Sprint() {
-        System.out.println("\u001B[47m"+"\u001B[30m"+myStackO.toString()+"\u001B[0m");
+        System.out.println("\u001B[47m" + "\u001B[30m" + myStackO.toString() + "\u001B[0m");
     }
+
     private static void testStackTwoQueues() {
         boolean answer = false;
-        boolean integer = false;
+        boolean integer;
         int option = 0;
         do {
-            System.out.println("\u001B[31m"+"Select action:");
+            System.out.println("\u001B[31m" + "Select action:");
             System.out.println("press 1 to push element");
             System.out.println("press 2 to remove element ");
             System.out.println("press 3 to peek element ");
             System.out.println("press 4 to pop element ");
             System.out.println("press 5 to make empty  ");
             System.out.println("press 6 for size  ");
-            System.out.println("press 7 to print elements"+"\u001B[0m");
+            System.out.println("press 7 to print elements" + "\u001B[0m");
             do {
                 try {
+                    integer = false;
                     option = Integer.parseInt(in.nextLine());
-                    integer = true;
-                    System.out.println("\u001B[34m"+ "Valid input"  +"\u001B[0m");
+                    System.out.println("\u001B[34m" + "Valid input" + "\u001B[0m");
                 } catch (NumberFormatException e) {
-                    System.out.println("\u001B[34m"+ "input is not an int value"  +"\u001B[0m");
+                    System.out.println("\u001B[34m" + "input is not an int value" + "\u001B[0m");
+                    integer = true;
                 }
-            } while (!integer);
+            } while (integer);
             if (option == 1)
                 STpush();
             if (option == 2)
@@ -437,113 +472,134 @@ public class LogicMain {
         } while (answer);
         testTask3();
     }
+
     private static void STpush() {
-        boolean integer = false;
+        boolean integer;
         int add = 0;
-        System.out.println("\u001B[34m"+ "Enter integer value to add:"  +"\u001B[0m");
+        System.out.println("\u001B[34m" + "Enter integer value to add:" + "\u001B[0m");
         do {
             try {
+                integer = false;
                 add = Integer.parseInt(in.nextLine());
-                integer = true;
-                System.out.println("\u001B[34m"+ "Valid input"  +"\u001B[0m");
+                System.out.println("\u001B[34m" + "Valid input" + "\u001B[0m");
             } catch (NumberFormatException e) {
-                System.out.println("\u001B[34m"+ "input is not an int value"  +"\u001B[0m");
+                System.out.println("\u001B[34m" + "input is not an int value" + "\u001B[0m");
+                integer = true;
             }
-        } while (!integer);
+        } while (integer);
         myStackT.push(add);
     }
+
     private static void STpeek() {
-        System.out.println("\u001B[47m"+"\u001B[30m"+myStackT.peek()+"\u001B[0m");
+        System.out.println("\u001B[47m" + "\u001B[30m" + myStackT.peek() + "\u001B[0m");
     }
+
     private static void STpop() {
-        System.out.println("\u001B[47m"+"\u001B[30m"+myStackT.pop()+"\u001B[0m");
+        System.out.println("\u001B[47m" + "\u001B[30m" + myStackT.pop() + "\u001B[0m");
     }
+
     private static void STremove() {
-        System.out.println("\u001B[47m"+"\u001B[30m"+myStackT.remove()+"\u001B[0m");
+        System.out.println("\u001B[47m" + "\u001B[30m" + myStackT.remove() + "\u001B[0m");
     }
+
     private static void STmakeEmpty() {
         myStackT.makeEmpty();
     }
+
     private static void STsize() {
-        System.out.println("\u001B[47m"+"\u001B[30m"+"size:  "+myStackT.size()+"\u001B[0m");
+        System.out.println("\u001B[47m" + "\u001B[30m" + "size:  " + myStackT.size() + "\u001B[0m");
     }
+
     private static void STprint() {
-        System.out.println("\u001B[47m"+"\u001B[30m"+myStackT.toString()+"\u001B[0m");
+        System.out.println("\u001B[47m" + "\u001B[30m" + myStackT.toString() + "\u001B[0m");
     }
+
     private static void testTask4() {
         boolean answer = false;
-        boolean integer = false;
+        boolean integer;
         int option = 0;
+        System.out.println("Task 4:");
+        System.out.println("You can add/ remove people to the address book\n" +
+                " or print the address book content");
         do {
-            System.out.println("Task 4:");
-            System.out.println("You can add/ remove people to the address book\n" +
-                    " or print the address book content");
-            System.out.println("\u001B[31m"+"Select action:");
+            System.out.println("\u001B[31m" + "Select action:");
             System.out.println("press 1 to add a new person");
             System.out.println("press 2 to remove a person by list index ");
-            System.out.println("press 3 to print the adress book content "+"\u001B[0m");
+            System.out.println("press 3 to print the adress book content " + "\u001B[0m");
             do {
                 try {
+                    integer = false;
                     option = Integer.parseInt(in.nextLine());
-                    integer = true;
-                    System.out.println("\u001B[34m"+ "Valid input"  +"\u001B[0m");
+                    if (option > 3) {
+                        integer = true;
+                        System.out.println("\u001B[34m" + "input is not valid" + "\u001B[0m");
+                    } else {
+                        System.out.println("\u001B[34m" + "Valid input" + "\u001B[0m");
+                    }
                 } catch (NumberFormatException e) {
-                    System.out.println("\u001B[34m"+ "input is not an int value"  +"\u001B[0m");
+                    System.out.println("\u001B[34m" + "input is not valid" + "\u001B[0m");
+                    integer = true;
                 }
-            } while (!integer);
+            } while (integer);
             if (option == 1)
-               addNewPerson();
+                addNewPerson();
             if (option == 2)
                 removePerson();
             if (option == 3)
-               printAddressBook();
+                printAddressBook();
 
             System.out.println("\n  press 1 to continue testing this structure \n or other to return to the tasks menu");
             answer = in.nextLine().equals("1");
         } while (answer);
         testTask(chooseTaskToTest());
     }
-    private static void addNewPerson(){
+
+    private static void addNewPerson() {
         String name = null;
         String address = null;
-        System.out.println("\u001B[34m"+ "Enter the name of the person:"  +"\u001B[0m");
+        System.out.println("\u001B[34m" + "Enter the name of the person:" + "\u001B[0m");
         name = in.nextLine();
-        System.out.println("\u001B[34m"+"Enter the address of "+ name+"\u001B[0m");
+        System.out.println("\u001B[34m" + "Enter the address of " + name + "\u001B[0m");
         address = in.nextLine();
         myAddressBook.addNewNameAndAddress(new Person(name, address));
-        System.out.println("\u001B[34m"+"New person added"+"\u001B[0m");
+        System.out.println("\u001B[34m" + "New person added" + "\u001B[0m");
     }
-    private static void removePerson(){
+
+    private static void removePerson() {
         boolean integer = false;
         int name = 0;
-        do {
-            System.out.println("Enter the index at which the person\n" +
-                    "to be removed is in the address book");
-            try {
-                name = Integer.parseInt(in.nextLine());
-                if (name < myAddressBook.getSize() &&  myAddressBook.getSize() > 0){
-                    integer = true;
-                }else{
-                    System.out.println("\u001B[34m"+"The address book is empty or\n" +
-                            "the index you peeked is outside \nthe range of the list"+"\u001B[0m");
-                    if (myAddressBook.getSize() > 0){
-                        System.out.println("\u001B[34m"+"\nThe available range is between 0 and "+
-                                (myAddressBook.getSize()-1)+"\u001B[0m");
-                    }else{
-                        System.out.println("\u001B[34m"+ "\nThe list is empty" +"\u001B[0m");
+        if (myAddressBook.getSize() == 0) {
+            System.out.println("\u001B[34m" + "\nlist is empty" + "\u001B[0m");
+        } else {
+            do {
+                System.out.println("Enter the index to remove from: ");
+                try {
+                    name = Integer.parseInt(in.nextLine());
+                    if (name < myAddressBook.getSize() && myAddressBook.getSize() > 0) {
+                        integer = true;
+                        System.out.println("\u001B[34m" + "Valid input" + "\u001B[0m");
+                    } else {
+                        System.out.println("\u001B[34m" + "The address book is empty or\n" +
+                                "the index you peeked is outside \nthe range of the list" + "\u001B[0m");
+                        if (myAddressBook.getSize() > 0) {
+                            System.out.println("\u001B[34m" + "\nThe available range is between 0 and " +
+                                    (myAddressBook.getSize() - 1) + "\u001B[0m");
+                        } else {
+                            System.out.println("\u001B[34m" + "\nThe list is empty" + "\u001B[0m");
+                        }
+                        testTask4();
                     }
-                    testTask4();
+                } catch (NumberFormatException e) {
+                    System.out.println("\u001B[34m" + "input is not valid" + "\u001B[0m");
                 }
-                System.out.println("Valid input");
-            } catch (NumberFormatException e) {
-                System.out.println("input is not an int value");
-            }
-        } while (!integer);
-        myAddressBook.remove(myAddressBook.getPerson(name));
+            }while (!integer) ;
+            myAddressBook.remove(myAddressBook.getPerson(name));
+        }
     }
-    private static void printAddressBook(){
+
+    private static void printAddressBook() {
         for (int i = 0; i < myAddressBook.getSize(); i++) {
-            System.out.println("\u001B[47m"+"\u001B[30m"+myAddressBook.getPerson(i)+"\u001B[0m");
+            System.out.println("\u001B[47m" + "\u001B[30m" + myAddressBook.getPerson(i) + "\u001B[0m");
         }
         System.out.println("_____________________________________________");
     }

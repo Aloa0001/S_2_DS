@@ -120,6 +120,9 @@ public class LogicMain {
                     integer = true;
                 }
             } while (integer);
+            if(players > 80000){
+                System.out.println("The input is large so please wait\nfor all three methods to finish\n");
+            }
             System.out.println("\u001B[47m" + "\u001B[30m" + "Result for Josephus ArrayList implementation is: " + JosephusArrayList.josephusProblem(players, m) + "\u001B[0m");
             System.out.println("\u001B[47m" + "\u001B[30m" + "Result for Josephus Iterator implementation is: " + JosephusArrayList.josephusProblemIterator(players, m) + "\u001B[0m");
             System.out.println("\u001B[47m" + "\u001B[30m" + "Result for Josephus LinkedList implementation is: " + JosephusLinkedList.josephusProblem(players, m) + "\u001B[0m");

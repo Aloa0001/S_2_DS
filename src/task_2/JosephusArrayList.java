@@ -34,7 +34,7 @@ public class JosephusArrayList {
         LinkedList<Integer> pl = new LinkedList<>();
         for (int i = 1; i <= players; i++)
             pl.add(i);
-        Iterator<Integer>  iterator = pl.listIterator(m);
+        Iterator<Integer>  iterator = pl.listIterator(m % players);
         while (pl.size() > 1) {
             iterator.next();
             if (winner == m){

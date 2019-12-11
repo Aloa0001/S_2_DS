@@ -1,4 +1,3 @@
-import task_2.JosephusArrayList;
 
 public class TestMain {
 
